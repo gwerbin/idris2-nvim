@@ -40,7 +40,7 @@ syn match idrisLineComment "---*\([^-!#$%&\*\+./<=>\?@\\^|~].*\)\?$" contains=id
 syn match idrisDocComment "|||\([^-!#$%&\*\+./<=>\?@\\^|~].*\)\?$" contains=idrisTodo,@Spell
 syn match idrisMetaVar "?[a-zA-Z][A-Za-z0-9_']*"
 syn match idrisPragma "%\(hide\|logging\|auto_lazy\|unbound_implicits\|prefix_record_projections\|ambiguity_depth\|nf_metavar_threshold\|search_timeout\|pair\|rewrite\|integerLit\|stringLit\|charLit\|doubleLit\|name\|start\|allow_overloads\|language\|default\|transform\|hint\|globalhint\|defaulthint\|inline\|noinline\|extern\|macro\|spec\|foreign\|nomangle\|builtin\|MkWorld\|World\|search\|runElab\|tcinline\|auto_implicit_depth\)"
-syn match idrisChar "'[^'\\]'\|'\\.'\|'\\u[0-9a-fA-F]\{4}'"
+syn match idrisChar "\v'%([^'\\]|\\.|\\[0-9]+|\\x[0-9a-fA-F]+|\\o[0-7]|NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL)'"
 syn match idrisBacktick "`[A-Za-z][A-Za-z0-9_']*`"
 syn region idrisString start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=@Spell
 syn region idrisBlockComment start="{-" end="-}" contains=idrisBlockComment,idrisTodo,@Spell
