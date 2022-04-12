@@ -29,9 +29,9 @@ syn keyword idrisLet let in
 syn keyword idrisForall forall
 syn keyword idrisDataOpt noHints uniqueSearch search external noNewtype containedin=idrisBrackets
 syn keyword idrisConditional if then else
-syn match idrisNumber "\<[0-9]\+\>\|\<0[xX][0-9a-fA-F]\+\>\|\<0[oO][0-7]\+\>"
-syn match idrisFloat "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
-syn match idrisDelimiter  "[,;]"
+syn match idrisNumber '\v<[0-9]+(_[0-9]+)*>|<0[xX][0-9a-fA-F]+(_[0-9a-fA-F]+)*>|<0[oO][0-7]+(_[0-7]+)*>|<0[bB][01]+(_[01]+)*>'
+syn match idrisFloat '\v<[0-9]+\.[0-9]+([eE][-+]=[0-9]+)=>'
+syn match idrisDelimiter "[,;]"
 syn keyword idrisInfix prefix infix infixl infixr
 syn match idrisOperators "\([-!#$%&\*\+./<=>\?@\\^|~:]\|\<_\>\)"
 syn match idrisType "\<[A-Z][a-zA-Z0-9_']*\>"
